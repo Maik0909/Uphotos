@@ -1,0 +1,244 @@
+  
+  * {
+    box-sizing: border-box;
+    font-family: system-ui;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    margin: 0;
+    background-color: #AB88FF;
+  }
+
+  .header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .header__img {
+    width: 150px;
+  }
+
+  .header__menu {
+    position: relative;
+  }
+
+  .header__menu ul {
+    visibility: hidden;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    margin: 0 0 0 -1em;
+  }
+
+  .header__menu li {
+    margin: 10px 0;
+  }
+
+  .header__menu li a:hover {
+    text-decoration: double;
+  }
+
+  .header__menu li a {
+    color: aliceblue;
+    text-decoration: none;
+  }
+
+  .header__menu ul {
+    margin-top: 100px;
+    
+  }
+
+  .header__menu:hover ul {
+    visibility: visible;
+  }
+
+  .header__menu__profile {
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+  }
+
+  .header__menu__profile img {
+    width: 40px;
+    margin-right: 5px;
+  }
+
+  .main {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0 0px;
+  }
+
+  .main__title {
+    text-align: center;
+    color: #2d0a6e;
+    font-size: 2rem;
+  }
+
+  .main__form {
+    position: relative;
+  }
+
+  .main__spinner {
+    width: 35px;
+    height: 35px;
+    margin-right: 2rem;
+    background-color: rgb(240, 239, 247);
+    display: inline;
+    border-radius: 100%;  
+    position: absolute;
+    right: 0;
+    top: 22%;
+    z-index: 2;
+    visibility: hidden;
+  }
+  .spinner__active{
+    visibility: visible;
+       -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+  @-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+      -webkit-transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sk-scaleout {
+    0% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  .main__input {
+    color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.1);
+    border: 2px solid aliceblue;
+    outline: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    height: 4rem;
+    padding-left: 2rem;
+    width: 45vw;
+  }
+
+  .main__input::placeholder {
+    color: aliceblue;
+  }
+
+  .carousel {
+    width: 100%;
+    overflow: scroll;
+    padding-left: 30px;
+    position: relative;
+  }
+
+  .carousel__container {
+    white-space: nowrap;
+    margin: 25px 0;
+    padding-bottom: 10px;
+  }
+
+  .carousel__container__item {
+    background-color:#56319b;
+    display: inline-block;
+    width: 200px;
+    height: 230px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 350ms ease-in-out all;
+    transform-origin: center;
+    position: relative;
+  }
+
+  .blink__animation__one {
+    animation: blinkOne 1s ease-in-out infinite;
+  }
+  .blink__animation__two {
+    animation: blinkTwo 1s ease-in-out infinite;
+  }
+
+  @keyframes blinkOne{
+    0%{opacity: .3;}
+    50%{opacity: .8;}
+    100%{opacity: .3;}
+    }
+  @keyframes blinkTwo{
+      0%{opacity: .8;}
+      50%{opacity: .3;}
+      100%{opacity: .8;}
+      }
+    
+  
+  .carousel__container__item:hover ~ .carousel__container__item{
+    transform: translate3d(20px,0,0);
+  }
+  .carousel__container:hover .carousel__container__item {
+    opacity: 0.3;
+  }
+
+  .carousel__container:hover .carousel__container__item:hover{
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  .carousel__item__img{
+    object-fit: cover;
+    width: 200px;
+  }
+
+  .img__hidden{
+    visibility: hidden;
+  }
+  .carousel__item__details{
+    background: linear-gradient(to top,rgba(0,0,0,0.7) 10%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transition: 400ms opacity;
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .carousel__item__details p {
+    color: white;
+    margin: 0;
+  }
+  .carousel__item__details:hover{
+    opacity: 1;
+  }
+
+
+
+
+
+  @media screen and (max-width:660px){
+
+    .main__input{
+      width: 70vw;
+      padding-left: 1rem;
+    }
+    .main__spinner{
+      margin-right: 1rem;
+    }
+  }
