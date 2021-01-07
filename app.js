@@ -25,6 +25,8 @@ function search(event) {
 
     customSearch.query = title
     getData(customSearch).then(render).catch(generalErrorHandler)
+    carousel.addEventListener('scroll', loadByScroll)
+
 
 }
 
@@ -32,7 +34,7 @@ function loadByScroll(){
     const scrolling = this.scrollLeft
 
     if(scrolling > Math.round(this.scrollWidth*percentage) ) {
-        percentage+=0.1
+        percentage+=0.15
         spinner.classList.add('spinner__active')
         getData(customSearch).then(render) 
     }  

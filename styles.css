@@ -154,6 +154,9 @@
     padding-bottom: 10px;
   }
 
+  .carousel__container__link{
+    text-decoration: none;
+  }
   .carousel__container__item {
     background-color:#56319b;
     display: inline-block;

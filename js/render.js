@@ -4,8 +4,8 @@ import {chooseLoadingTime} from './utils.js'
 const buildElement = (item,i) => {
     const {user,urls,links,alt_description} = item
     const content = 
-        `<a href="${links.download}" target="_blank" >
-            <div id="element${i}" class="carousel__container__item ${i%2?'blink__animation__two':'blink__animation__one'} ">
+        `<a href="${links.download}" class="carousel__container__link"target="_blank" >
+            <div class="carousel__container__item ${i%2?'blink__animation__two':'blink__animation__one'} ">
             <img class="carousel__item__img " src="${evalConnection(urls)}" loading="lazy" alt="${alt_description}">
             <div class="carousel__item__details">
                 <p class="carousel__item__details__title">${!user.location?'Worlwide':user.location}</p>
@@ -43,11 +43,13 @@ const render = async(list) => {
         carouselItems.forEach((item,i)=> {
 
             item.classList.contains('blink__animation__two') ?
-            item.classList.remove('blink__animation__two'):
-            item.classList.remove('blink__animation__one')
-
-            carouselImages[i].classList.add( 'img__visible')
-            // carouselImages[i].classList.remove( 'img__hidden')
+                item.classList.remove('blink__animation__two'):
+            item.classList.contains('blink__animation__one') ?
+                item.classList.remove('blink__animation__one') : ''
+           
+            if(!carouselImages[i].classList.contains('img__visible')) 
+                carouselImages[i].classList.add('img__visible')
+         
         
         })
     }, chooseLoadingTime(segsMobile,segsWeb,navigator.connection.effectiveType) )
