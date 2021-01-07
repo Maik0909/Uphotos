@@ -82,7 +82,7 @@
   .main__title {
     text-align: center;
     color: #2d0a6e;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .main__form {
@@ -206,6 +206,24 @@
   .img__hidden{
     visibility: hidden;
   }
+
+  .img__visible{
+    visibility: visible;
+    animation: 1s fadeIn;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  
   .carousel__item__details{
     background: linear-gradient(to top,rgba(0,0,0,0.7) 10%, rgba(0,0,0,0) 100%);
     opacity: 0;
@@ -228,6 +246,12 @@
     opacity: 1;
   }
 
+  .alert__message{
+    font-size: 2rem;
+    text-align: center;
+    color: #2d0a6e;
+  }
+
 
 
 
@@ -237,6 +261,9 @@
     .main__input{
       width: 70vw;
       padding-left: 1rem;
+    }
+    .main__title{
+      font-size: 2rem;
     }
     .main__spinner{
       margin-right: 1rem;

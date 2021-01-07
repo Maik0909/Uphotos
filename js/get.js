@@ -1,11 +1,15 @@
+import { apiKeys } from "./configs.js"
+import {sortApiKeys} from "./utils.js"
+
 export async function getData(config){
 
-    const {orientation,count,apiKey,query} = config
+    let {orientation,count,apiKey,query} = config
+
+    apiKey = sortApiKeys(apiKeys)[0]
 
     const url = `https://api.unsplash.com/photos/random?${query?'query='+query+'&':''}orientation=${orientation}&count=${count}&client_id=${apiKey}`
-    console.log(url)
-    const response = await fetch(url),
-          data     = await response.json()
+    const response = await fetch(url)
+    const data     = await response.json()
 
     return data
 }
