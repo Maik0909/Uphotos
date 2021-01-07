@@ -15,6 +15,7 @@ const customSearch = {
 const searchBar = window['search-bar']
 
 function search(event) { 
+    percentage = 0.2
     event.preventDefault()
     spinner.classList.add('spinner__active')
 
@@ -25,7 +26,7 @@ function search(event) {
 
     customSearch.query = title
     getData(customSearch).then(render).catch(generalErrorHandler)
-    carousel.addEventListener('scroll', loadByScroll)
+
 
 
 }

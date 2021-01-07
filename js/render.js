@@ -47,8 +47,9 @@ const render = async(list) => {
             item.classList.contains('blink__animation__one') ?
                 item.classList.remove('blink__animation__one') : ''
            
-            if(!carouselImages[i].classList.contains('img__visible')) 
+            if(!carouselImages[i].classList.contains('img__visible')) {
                 carouselImages[i].classList.add('img__visible')
+            }
          
         
         })
