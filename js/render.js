@@ -6,7 +6,7 @@ const buildElement = (item,i) => {
     const content = 
         `<a href="${links.download}" target="_blank" >
             <div id="element${i}" class="carousel__container__item ${i%2?'blink__animation__two':'blink__animation__one'} ">
-            <img class="carousel__item__img img__hidden" src="${evalConnection(urls)}" loading="lazy" alt="${alt_description}">
+            <img class="carousel__item__img " src="${evalConnection(urls)}" loading="lazy" alt="${alt_description}">
             <div class="carousel__item__details">
                 <p class="carousel__item__details__title">${!user.location?'Worlwide':user.location}</p>
                 <p class="carousel__item__details__subtitle">${user.name}</p>
@@ -46,7 +46,7 @@ const render = async(list) => {
             item.classList.remove('blink__animation__two'):
             item.classList.remove('blink__animation__one')
 
-            carouselImages[i].classList.replace( 'img__hidden','img__visible')
+            carouselImages[i].classList.add( 'img__visible')
             // carouselImages[i].classList.remove( 'img__hidden')
         
         })

@@ -199,17 +199,14 @@
     opacity: 1;
   }
   .carousel__item__img{
+    visibility: hidden;
     object-fit: cover;
     width: 200px;
   }
 
-  .img__hidden{
-    visibility: hidden;
-  }
-
   .img__visible{
     visibility: visible;
-    animation: 1s fadeIn;
+    animation: 1s fadeIn ease-in-out;
     animation-fill-mode: forwards;
   }
 

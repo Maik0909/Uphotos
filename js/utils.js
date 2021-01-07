@@ -13,6 +13,5 @@ export function sortApiKeys(keys){
 
 export function chooseLoadingTime(segsM,segsW,prop) {
     const isMobile = navigator.userAgent.match(/(iPhone|iPad|Android|webOS|IEMobile|Opera Mini)/i)
-    console.log(Array.isArray(isMobile))
     return Array.isArray(isMobile) ? segsM[prop] : segsW[prop]
 }
